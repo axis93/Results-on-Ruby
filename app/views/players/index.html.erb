@@ -1,0 +1,30 @@
+<h1>Listing all the Players / Board</h1>
+<%= link_to 'Add a Player', new_player_path %>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Points</th>
+		<th>Win</th> 
+		<th>Draw</th>  
+		<th>Lose</th> 
+		<th>GS</th> 
+		<th>GT</th>
+		<th>DR</th>
+	</tr>
+
+	<% @players.each do |player| %>
+	<tr>
+		<td><%= player.name %></td>
+		<td><%= player.points %></td>
+		<td><%= player.win %></td> 
+		<td><%= player.draw %></td>  
+		<td><%= player.lose %></td> 
+		<td><%= player.gs %></td> 
+		<td><%= player.gt %></td>
+		<td><%= player.dr %></td>
+		<td><%= link_to 'Show', player_path(player) %></td>
+		<td><%= link_to 'Destroy', player_path(player), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
+	</tr>
+	<% end %>
+</table>

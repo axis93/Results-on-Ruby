@@ -5,6 +5,36 @@
 		<%= form.text_field :name %>
 	</p>
 	<p>
+		<%= form.label :win %>
+		<%= form.text_field :win %>
+	</p>
+	<p>
+		<%= form.label :draw %>
+		<%= form.text_field :draw %>
+	</p>
+	<p>
+		<%= form.label :lose %>
+		<%= form.text_field :lose %>
+	</p>
+	<p>
+		<%= form.label :gs %>
+		<%= form.text_field :gs %>
+	</p>
+	<p>
+		<%= form.label :gt %>
+		<%= form.text_field :gt %>
+	</p>
+	<p>
+		<%= form.label :dr %>
+		<%= form.text_field :dr %>
+	</p>
+	<p>
+		<%= form.label :points %>
+		<%= form.text_field :points %>
+	</p>
+	<p>
 		<%= form.submit %>
 	</p>
 <% end %>
+
+<%= link_to 'Back', players_path %>
