@@ -1,0 +1,13 @@
+<h1>This is the list of all the result</h1>
+<%= link_to 'Back to the Board', players_path %>
+<%= link_to 'Add a new result', new_result_path %>
+
+
+
+	<% @results.each do |result| %>
+	<p><%= result.date %></p>		
+	<p> <%= result.name1 %>
+		</p>
+
+
+<% end %>

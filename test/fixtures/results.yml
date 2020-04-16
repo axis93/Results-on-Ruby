@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name1: MyString
+  goal1: 1
+  name2: MyString
+  goal2: 1
+  date: 2020-04-16 19:01:55
+  player: one
+
+two:
+  name1: MyString
+  goal1: 1
+  name2: MyString
+  goal2: 1
+  date: 2020-04-16 19:01:55
+  player: two
