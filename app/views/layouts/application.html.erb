@@ -9,7 +9,10 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="d-flex flex-column">
+     <%= render 'layouts/navigation' %>
     <%= yield %>
   </body>
+<footer> Copyright &copy; Results 2020 - All rights reserved <%= link_to "Simone Piazzini", "https://github.com/axis93", class: "text-white" %> </footer>
+
 </html>

@@ -1,15 +1,14 @@
 class ResultsController < ApplicationController
-
 	def index
-		@result = Result.all
-	end
-
-	def new
-		@result = Result.new
+		@results = Result.all
 	end
 
 	def show
 		@result = Result.find(params[:id])
+	end
+
+	def new
+		@result = Result.new
 	end
 
 	def create
@@ -22,10 +21,17 @@ class ResultsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@result = Result.find(params[:id])
+		@result.destroy
+
+		redirect_to results_path
+	end
+
 	private
 		def result_params
 			params.require(:result).permit(:name1, :goal1, :name2, :goal2,
-				:date)
+				:date, :player_id)
 		end
 
 end

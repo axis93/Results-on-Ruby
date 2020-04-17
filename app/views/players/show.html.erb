@@ -2,8 +2,7 @@
 	<strong>Name:</strong>
 	<%= @player.name %>
 
-	<strong> Points:</strong>
-	<%= @player.points %>
+	
 
 	<strong> Win:</strong>
 	<%= @player.win %>
@@ -22,8 +21,9 @@
 
 	<strong> DR:</strong>
 	<%= @player.dr %>
+	<strong> Points:</strong>
+	<%= @player.points %>
 </p>
-
+<% end %>
 
 <%= link_to 'Back', players_path %>
-<% end %>

@@ -1,0 +1,55 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+
+background-color: black !important;
+
+}
+
+.nav-link{
+	color: white !important;
+} 
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home {
+	margin-top: 100px;
+}
+
+.jumbotron {
+	background-image: asset-url('champions.png');
+	color: white;
+	height: 560px;
+}
+
+html,
+body{
+	height: 100%;
+	
+}
+
+#page-content {
+	flex: 1 0 auto;
+	background-color: lightgrey;
+}
+
+
+ footer{
+	color:white;
+	position:fixed;
+	bottom: 0px;
+	overflow:hide;
+	background-color:black;
+	height: 50px;
+	width: 100%;
+	font-size: 25px;
+	text-align:center;	
+
+}

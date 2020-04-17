@@ -2,12 +2,10 @@
 <%= link_to 'Back to the Board', players_path %>
 <%= link_to 'Add a new result', new_result_path %>
 
-
-
+<div id="display_result">
 	<% @results.each do |result| %>
-	<p><%= result.date %></p>		
-	<p> <%= result.name1 %>
-		</p>
-
-
+	<p>Date</p>
+	<p><%= result.date%>></p>
+	<p><strong><%= result.name1 %></strong> <%= result.goal1 %> - <%= result.goal2 %> <strong><%= result.name2 %></strong> <%= link_to 'Destroy', result_path(result), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+</div>
 <% end %>

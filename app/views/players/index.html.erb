@@ -1,8 +1,17 @@
-<h1>Listing all the Players / Board</h1>
+<h1 class="text-center mt-4">Listing all the Players</h1>
 <%= link_to 'Add a Player', new_player_path %>
 <%= link_to 'Add result', new_result_path %>
-<%= link_to 'Show results', result_path %>
-
+<%= link_to 'Show Results', results_path %>
+<% @players.each do |player| %>
+<div class="card" style="width: 18rem;">
+ <%= image_tag("roy.png", :alt => "Card image cap") %>
+  <div class="card-body">
+    <h5 class="card-title"> </h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+<% end %>
 <table>
 	<tr>
 		<th>Name</th>
@@ -28,5 +37,7 @@
 		<td><%= link_to 'Show', player_path(player) %></td>
 		<td><%= link_to 'Destroy', player_path(player), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
 	</tr>
+
+
 	<% end %>
 </table>
