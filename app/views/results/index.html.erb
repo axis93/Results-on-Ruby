@@ -1,3 +1,4 @@
+<div id="page-content">
 <h1>This is the list of all the result</h1>
 <%= link_to 'Back to the Board', players_path %>
 <%= link_to 'Add a new result', new_result_path %>
@@ -6,6 +7,10 @@
 	<% @results.each do |result| %>
 	<p>Date</p>
 	<p><%= result.date%>></p>
-	<p><strong><%= result.name1 %></strong> <%= result.goal1 %> - <%= result.goal2 %> <strong><%= result.name2 %></strong> <%= link_to 'Destroy', result_path(result), method: :delete, data: {confirm: 'Are you sure?'} %></p>
-</div>
+	<p><strong><%= result.name1 %></strong> <%= result.goal1 %> - <%= result.goal2 %> <strong><%= result.name2 %></strong>
+	<%= result.player_id %> <%= link_to 'Destroy', result_path(result), method: :delete, data: {confirm: '
+		Are you sure?'} %></p>
 <% end %>
+</div>
+
+</div>

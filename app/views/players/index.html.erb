@@ -1,43 +1,23 @@
-<h1 class="text-center mt-4">Listing all the Players</h1>
-<%= link_to 'Add a Player', new_player_path %>
-<%= link_to 'Add result', new_result_path %>
-<%= link_to 'Show Results', results_path %>
-<% @players.each do |player| %>
-<div class="card" style="width: 18rem;">
- <%= image_tag("roy.png", :alt => "Card image cap") %>
-  <div class="card-body">
-    <h5 class="card-title"> </h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-<% end %>
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Points</th>
-		<th>Win</th> 
-		<th>Draw</th>  
-		<th>Lose</th> 
-		<th>GS</th> 
-		<th>GT</th>
-		<th>DR</th>
-	</tr>
+<div id="page-content">
+	<h1 class="text-center mt-4">Listing all the Players</h1>
+	<%= link_to 'Add a Player', new_player_path %>
+	<%= link_to 'Add result', new_result_path %>
+	<%= link_to 'Show Results', results_path %>
 
+	<div class="container">
 	<% @players.each do |player| %>
-	<tr>
-		<td><%= player.name %></td>
-		<td><%= player.points %></td>
-		<td><%= player.win %></td> 
-		<td><%= player.draw %></td>  
-		<td><%= player.lose %></td> 
-		<td><%= player.gs %></td> 
-		<td><%= player.gt %></td>
-		<td><%= player.dr %></td>
-		<td><%= link_to 'Show', player_path(player) %></td>
-		<td><%= link_to 'Destroy', player_path(player), method: :delete, data: {confirm: 'Are you sure?'} %> </td>
-	</tr>
-
-
+		<div class="row justify-content-md-center">
+			<div class="col-6">
+				<div class="card border-secondary mb-1 shadow p-1 mb-5 bg-white rounded" >
+					<h5 class="card-title card-header"> <%= link_to player.name, player_path(player), class: "text-primary" %></h5>
+						<div class="card-body">
+							<p class="card-text"> <strong>Points: </strong> <%= player.points %></p>
+							<%= link_to 'View', player_path(player), class: "btn btn-primary" %>
+							<%= link_to 'Delete', player_path(player), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"} %>
+						</div>
+				</div>		
+			</div>
+		</div>
 	<% end %>
-</table>
+	</div>
+</div>	
