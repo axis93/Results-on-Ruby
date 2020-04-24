@@ -1,15 +1,29 @@
 <div id="page-content">
-<h1>This is the list of all the result</h1>
+<h1 class="text-center p-4">This is the list of all the result</h1>
 <%= link_to 'Back to the Board', players_path %>
 <%= link_to 'Add a new result', new_result_path %>
 
-<div id="display_result">
+<div class="container">
 	<% @results.each do |result| %>
-	<p>Date</p>
-	<p><%= result.date%>></p>
-	<p><strong><%= result.name1 %></strong> <%= result.goal1 %> - <%= result.goal2 %> <strong><%= result.name2 %></strong>
-	<%= result.player_id %> <%= link_to 'Destroy', result_path(result), method: :delete, data: {confirm: '
-		Are you sure?'} %></p>
+	<div class="row justify-content-md-center">
+		<div class="col-6">
+			<div class="card border-secondary mb-1 shadow p-1 mb-5 bg-white rounded">
+				<h5 class="card-title card-header bg-secondary text-center"> <%= result.date %></h5>
+				<div class="card-body text-center">
+					<p class="card-text text-center"> <strong> <%= result.name1 %> </strong> <%= result.goal1 %> - <%= result.goal2 %> <strong> <%= result.name2 %> </strong>
+						
+					</p>
+					<%= link_to 'Destroy', result_path(result), class: "btn btn-primary  float-bottom btn-sm", method: :delete, data: {confirm: '
+		Are you sure?'} %>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+
+
+
+
 <% end %>
 </div>
 

@@ -1,26 +1,23 @@
-<p>
-	<strong>Name:</strong>
-	<%= @player.name %>
+<div id="page-content">
+	<h1 class="text-center mt-4">Listing all the Players</h1>
+	<%= link_to 'Add a Player', new_player_path %>
+	<%= link_to 'Add result', new_result_path %>
+	<%= link_to 'Show Results', results_path %>
 
-	<strong> Win:</strong>
-	<%= @player.win %>
-
-	<strong> Draw</strong>
-	<%= @player.draw %>
-
-	<strong> Lose:</strong>
-	<%= @player.lose %>
-
-	<strong> GS:</strong>
-	<%= @player.gs %>
-
-	<strong> GT:</strong>
-	<%= @player.gt %>
-
-	<strong> DR:</strong>
-	<%= @player.dr %>
-	<strong> Points:</strong>
-	<%= @player.points %>
-</p>
-
-<%= link_to 'Back', players_path %>
+	<div class="container">
+	<% @players.each do |player| %>
+		<div class="row justify-content-md-center">
+			<div class="col-6">
+				<div class="card border-secondary mb-1 shadow p-1 mb-5 bg-white rounded" >
+					<h5 class="card-title card-header"> <%= link_to player.name, player_path(player), class: "text-primary" %></h5>
+						<div class="card-body">
+							<p class="card-text"> <strong>Points: </strong> <%= player.points %></p>
+							<%= link_to 'View', player_path(player), class: "btn btn-primary" %>
+							<%= link_to 'Delete', player_path(player), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"} %>
+						</div>
+				</div>		
+			</div>
+		</div>
+	<% end %>
+	</div>
+</div>	

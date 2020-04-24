@@ -17,7 +17,7 @@ class ResultsController < ApplicationController
 		if @result.save
 			redirect_to @result
 		else
-			render plain: params[:result]
+			render 'new'
 		end
 	end
 

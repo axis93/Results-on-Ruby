@@ -11,7 +11,7 @@
 				<div class="card border-secondary mb-1 shadow p-1 mb-5 bg-white rounded" >
 					<h5 class="card-title card-header"> <%= link_to player.name, player_path(player), class: "text-primary" %></h5>
 						<div class="card-body">
-							<p class="card-text"> <strong>Points: </strong> <%= player.points %></p>
+							<p class="card-text"> <strong>Points: </strong> <%= player.points %> win :<%= player.win %> draw <%= player.draw %> lose <%= player.lose %> GS: <%= player.gs %> GT: <%= player.gt %> DR: <%= player.dr %> </p>
 							<%= link_to 'View', player_path(player), class: "btn btn-primary" %>
 							<%= link_to 'Delete', player_path(player), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"} %>
 						</div>
